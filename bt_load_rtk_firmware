@@ -7,6 +7,7 @@ sleep 2
 echo 1 > /sys/class/rfkill/rfkill0/state
 sleep 2
 
-insmod /usr/lib/modules/hci_uart.ko
-rtk_hciattach -n -s 115200 BT_TTY_DEV rtk_h5 &
+insmod /lib/modules/$(uname -r)/kernel/drivers/bluetooth/hci_uart.ko
+rtk_hciattach -n -s 115200 $BT_TTY_DEV rtk_h5 &
+sleep 5
 hciconfig hci0 up

@@ -36,8 +36,8 @@
 
 //#define BT_ADDR_FROM_VENDOR_STORAGE
 
-#define FIRMWARE_DIRECTORY	"/lib/firmware/rtlbt/"
-#define BT_CONFIG_DIRECTORY	"/lib/firmware/rtlbt/"
+#define FIRMWARE_DIRECTORY	"/lib/firmware/rtl_bt/"
+#define BT_CONFIG_DIRECTORY	"/lib/firmware/rtl_bt/"
 #define EXTRA_CONFIG_FILE	"/opt/rtk_btconfig.txt"
 #define BT_ADDR_FILE		"/opt/bdaddr"
 #define BDADDR_STRING_LEN	17
@@ -149,7 +149,7 @@ static struct patch_info patch_table[] = {
 	/* RTL8821CS */
 	{ RTL_FW_MATCH_HCI_REV, CHIP_8821CS,
 		ROM_LMP_8821a, ROM_LMP_8821a, 0, 0x000c,
-		"rtl8821c_fw", "rtl8821c_config", "RTL8821CS"},
+		"rtl8821cs_fw", "rtl8821cs_config", "RTL8821CS"},
 	/* RTL8821AS */
 	{ 0, 0, ROM_LMP_8821a, ROM_LMP_8821a, 0, 0,
 		"rtl8821a_fw", "rtl8821a_config", "RTL8821AS"},
@@ -700,13 +700,14 @@ typedef int8_t RT_S8, *PRT_S8;
 typedef uint16_t RT_U16, *PRT_U16;
 typedef int32_t RT_S32, *PRT_S32;
 typedef uint32_t RT_U32, *PRT_U32;
+/*
 static void rtk_get_ram_addr(uint8_t bt_addr[0])
 {
 	srand(time(NULL) + getpid() + getpid() * 987654 + rand());
 
 	RT_U32 addr = rand();
 	memcpy(bt_addr, &addr, sizeof(RT_U8));
-}
+}*/
 
 #ifdef BT_ADDR_FROM_VENDOR_STORAGE
 
